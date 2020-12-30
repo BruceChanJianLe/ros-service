@@ -250,6 +250,31 @@ namespace basic_service
 } // namespace basic_service
 ```
 
+**Step 7**  
+
+Update CMakeLists.txt for service server.  
+
+```cmake
+catkin_package(
+  INCLUDE_DIRS include
+#  LIBRARIES ros_service
+#  CATKIN_DEPENDS message_generation message_runtime roscpp rospy
+#  DEPENDS system_lib
+)
+
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+)
+
+add_executable(ros_service_client_node
+  src/ros_service_client.cpp
+  src/ros_service_client_node.cpp
+)
+add_dependencies(ros_service_client_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(ros_service_client_node ${catkin_LIBRARIES})
+```
+
 ## Reference
 
 - Service with class [link1](https://answers.ros.org/question/214597/service-with-class-method/) [link2](https://answers.ros.org/question/308160/problem-declaring-a-service-server-within-a-class/)
