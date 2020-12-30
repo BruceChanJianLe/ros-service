@@ -4,7 +4,7 @@
 int main(int argc, char ** argv)
 {
     // Initialize ROS node
-    ros::init(argc, argv, "basic_service/basic_client");
+    ros::init(argc, argv, "basic_client");
 
     // Instantiate ros_service_client obj
     basic_service::ros_service_client node;
