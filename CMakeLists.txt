@@ -25,7 +25,7 @@ generate_messages(
 
 catkin_package(
   INCLUDE_DIRS include
-#  LIBRARIES ros-service
+#  LIBRARIES ros_service
 #  CATKIN_DEPENDS message_generation message_runtime roscpp rospy
 #  DEPENDS system_lib
 )
@@ -39,6 +39,5 @@ add_executable(ros_service_node
   src/ros_service.cpp
   src/ros_service_node.cpp
 )
-# add_dependencies(ros_service_node ${PROJECT_NAME}_gencpp)
 add_dependencies(ros_service_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(ros_service_node ${catkin_LIBRARIES})
