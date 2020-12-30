@@ -6,7 +6,7 @@ namespace basic_service
     ros_service_client::ros_service_client()
     :   private_nh_(ros::NodeHandle("~")),
         global_nh_(ros::NodeHandle()),
-        srv_client_(global_nh_.serviceClient<ros_service::Service>("basic_service/basic_service"))
+        srv_client_(global_nh_.serviceClient<ros_service::Service>("ros_service_server_node/basic_service"))
     {
     }
 
@@ -34,7 +34,7 @@ namespace basic_service
             ROS_INFO_STREAM(
                 ros::this_node::getName() <<
                 " failed to enable service client: " <<
-                srv_msg_.response.done
+                srv_client_.getService()
             );
         }
 
