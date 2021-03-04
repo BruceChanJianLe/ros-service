@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <node pkg="ros_service" type="ros_service_alt_node" name="ros_service_server_node" output="screen"/>
+
+</launch>
