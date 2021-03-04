@@ -48,3 +48,10 @@ add_executable(ros_service_client_node
 )
 add_dependencies(ros_service_client_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(ros_service_client_node ${catkin_LIBRARIES})
+
+add_executable(ros_service_alt_node
+  src/ros_service_alt.cpp
+  src/ros_service_alt_node.cpp
+)
+add_dependencies(ros_service_alt_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(ros_service_alt_node ${catkin_LIBRARIES})
